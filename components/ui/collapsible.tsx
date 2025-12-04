@@ -92,7 +92,11 @@ function CollapsibleTrigger({
 
   if (asChild && React.isValidElement(children)) {
     const child = children as React.ReactElement<
-      React.HTMLAttributes<HTMLElement> & { className?: string }
+      React.HTMLAttributes<HTMLElement> & { 
+        className?: string;
+        "data-slot"?: string;
+        "data-state"?: string;
+      }
     >;
 
     return React.cloneElement(child, {
