@@ -39,25 +39,25 @@ export function RaceCard({ race }: RaceCardProps) {
 						{race.locality}, {race.country}
 					</p>
 
-					<div className="space-y-2 mb-4 text-xs">
+					<div className="space-y-2 mb-4 text-[12px]">
 						<div className="flex justify-between">
-							<span className="text-gray-500 uppercase tracking-wider font-semibold text-left">Practice 1</span>
+							<span className="text-gray-500 uppercase font-semibold text-left">Practice 1</span>
 							<span className="text-gray-300 font-medium uppercase tabular-nums">{race.schedule.FirstPractice?.date}. {race.schedule.FirstPractice?.time}</span>
 						</div>
 						<div className="flex justify-between">
-							<span className="text-gray-500 uppercase tracking-wider font-semibold text-left">{secondLabel}</span>
+							<span className="text-gray-500 uppercase font-semibold text-left">{secondLabel}</span>
 							<span className="text-gray-300 font-medium uppercase whitespace-nowrap tabular-nums">{secondSession?.date}. {secondSession?.time}</span>
 						</div>
 						<div className="flex justify-between">
-							<span className="text-gray-500 uppercase tracking-wider font-semibold text-left">{thirdLabel}</span>
+							<span className="text-gray-500 uppercase font-semibold text-left">{thirdLabel}</span>
 							<span className="text-gray-300 font-medium uppercase tabular-nums">{thirdSession?.date}. {thirdSession?.time}</span>
 						</div>
 						<div className="flex justify-between">
-							<span className="text-gray-500 uppercase tracking-wider font-semibold text-left">Qualifying</span>
+							<span className="text-gray-500 uppercase font-semibold text-left">Qualifying</span>
 							<span className="text-gray-300 font-medium uppercase tabular-nums">{race.schedule.Qualifying?.date}. {race.schedule.Qualifying?.time}</span>
 						</div>
 						<div className="flex justify-between">
-							<span className="text-gray-500 uppercase tracking-wider font-semibold text-left">Race</span>
+							<span className="text-gray-500 uppercase font-semibold text-left">Race</span>
 							<span className="text-gray-300 font-medium uppercase tabular-nums">{race.schedule.date}. {race.schedule.time}</span>
 						</div>
 					</div>

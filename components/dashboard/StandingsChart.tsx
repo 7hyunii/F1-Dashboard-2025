@@ -53,7 +53,7 @@ export function StandingsChart() {
           <CardContent className="space-y-8">
             
             {/* Round Selector */}
-            <div className="flex justify-end mb-4">
+            <div className="flex justify-center sm:justify-end mb-4">
               <Select value={selectedRound} onValueChange={setSelectedRound}>
                 <SelectTrigger className="!w-[300px] h-12 text-base bg-white/5 border-white/10 text-white">
                   <SelectValue placeholder="Select Round" />
