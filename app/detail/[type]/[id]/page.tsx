@@ -7,6 +7,25 @@ import { getDriverStandings } from '@/lib/getDrivers';
 import { getDriverRaceResults } from '@/lib/getDriverRaceResults';
 import { getConstructorStandings } from '@/lib/getConstructors';
 
+export async function generateStaticParams() {
+  const teams = getConstructorStandings().map((team) => ({
+    type: 'team',
+    id: team.id,
+  }));
+
+  const drivers = getDriverStandings().map((driver) => ({
+    type: 'driver',
+    id: driver.id,
+  }));
+
+  const races = getRaces().map((race) => ({
+    type: 'race',
+    id: race.id,
+  }));
+
+  return [...teams, ...drivers, ...races];
+}
+
 export default async function Page({ params }: { params: Promise<{ type: string; id: string }> }) {
   const { type, id } = await params;
 
