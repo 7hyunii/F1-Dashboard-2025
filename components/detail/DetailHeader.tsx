@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import React from 'react';
+import { getImagePath } from '@/lib/utils/image';
 
 interface DetailHeaderProps {
   title: string;
@@ -25,7 +26,7 @@ export function DetailHeader({
           <Button
             variant="ghost"
             className="mb-4 sm:mb-6 text-white hover:text-gray-300 hover:bg-white/10 flex items-center gap-2 pl-1">
-            <img src="/arrow-left.svg" alt="Back" className="w-4 h-4" />
+            <img src={getImagePath("/arrow-left.svg")} alt="Back" className="w-4 h-4" />
             Back to Home
           </Button>
         </Link>

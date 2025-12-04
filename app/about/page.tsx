@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "../../components/ui/card";
 import { Header } from "../../components/Header";
+import { getImagePath } from "@/lib/utils/image";
 
 export default function About() {
   return (
@@ -38,7 +39,7 @@ export default function About() {
                 <CardHeader>
                   <div className="flex items-center gap-3 mb-2">
                     <div className="p-2 bg-red-600/20 rounded-lg border border-red-600/30">
-                      <img src="/zap.svg" alt="Zap Icon" className="w-5 h-5 text-red-400" />
+                      <img src={getImagePath("/zap.svg")} alt="Zap Icon" className="w-5 h-5 text-red-400" />
                     </div>
                     <CardTitle className="text-white">Speed &amp; Technology</CardTitle>
                   </div>
@@ -55,7 +56,7 @@ export default function About() {
                 <CardHeader>
                   <div className="flex items-center gap-3 mb-2">
                     <div className="p-2 bg-blue-600/20 rounded-lg border border-blue-600/30">
-                      <img src="/globe.svg" alt="Globe Icon" className="w-5 h-5 text-blue-400" />
+                      <img src={getImagePath("/globe.svg")} alt="Globe Icon" className="w-5 h-5 text-blue-400" />
                     </div>
                     <CardTitle className="text-white">Global Reach</CardTitle>
                   </div>
@@ -72,7 +73,7 @@ export default function About() {
                 <CardHeader>
                   <div className="flex items-center gap-3 mb-2">
                     <div className="p-2 bg-green-600/20 rounded-lg border border-green-600/30">
-                      <img src="/trophy.svg" alt="Trophy Icon" className="w-5 h-5 text-green-400" />
+                      <img src={getImagePath("/trophy.svg")} alt="Trophy Icon" className="w-5 h-5 text-green-400" />
                     </div>
                     <CardTitle className="text-white">Rich History</CardTitle>
                   </div>
@@ -89,7 +90,7 @@ export default function About() {
                 <CardHeader>
                   <div className="flex items-center gap-3 mb-2">
                     <div className="p-2 bg-purple-600/20 rounded-lg border border-purple-600/30">
-                      <img src="/award.svg" alt="Team Icon" className="w-5 h-5 text-purple-400" />
+                      <img src={getImagePath("/award.svg")} alt="Team Icon" className="w-5 h-5 text-purple-400" />
                     </div>
                     <CardTitle className="text-white">Team Competition</CardTitle>
                   </div>

@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Race } from '@/types/race';
+import { getImagePath } from '@/lib/utils/image';
 
 interface RaceCircuitSectionProps {
 	race: Race;
@@ -16,7 +17,7 @@ export function RaceCircuitSection({ race }: RaceCircuitSectionProps) {
 		    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-12">
 				<Card className="bg-white/5 border-white/10 backdrop-blur-sm">
 					<CardContent className="p-6 text-center">
-						<img src="/map-pin.svg" alt="Location" className="w-8 h-8 mx-auto mb-3" />
+						<img src={getImagePath("/map-pin.svg")} alt="Location" className="w-8 h-8 mx-auto mb-3" />
 						<p className="text-xl mb-1 text-white font-bold">{race.locality}</p>
 						<p className="text-sm text-gray-400 font-semibold">{race.country}</p>
 					</CardContent>
@@ -24,7 +25,7 @@ export function RaceCircuitSection({ race }: RaceCircuitSectionProps) {
 
 				<Card className="bg-white/5 border-white/10 backdrop-blur-sm">
 					<CardContent className="p-6 text-center">
-						<img src="/route.svg" alt="Circuit Length" className="w-8 h-8 mx-auto mb-3" />
+						<img src={getImagePath("/route.svg")} alt="Circuit Length" className="w-8 h-8 mx-auto mb-3" />
 						<p className="text-xl mb-1 text-white font-bold">{race.circuitLength}</p>
 						<p className="text-sm text-gray-400">Circuit Length</p>
 					</CardContent>
@@ -32,7 +33,7 @@ export function RaceCircuitSection({ race }: RaceCircuitSectionProps) {
 
 				<Card className="bg-white/5 border-white/10 backdrop-blur-sm">
 					<CardContent className="p-6 text-center">
-						<img src="/repeat.svg" alt="Number of Laps" className="w-8 h-8 mx-auto mb-3" />
+						<img src={getImagePath("/repeat.svg")} alt="Number of Laps" className="w-8 h-8 mx-auto mb-3" />
 						<p className="text-xl mb-1 text-white font-bold">{race.laps}</p>
 						<p className="text-sm text-gray-400">Number of Laps</p>
 					</CardContent>
@@ -40,7 +41,7 @@ export function RaceCircuitSection({ race }: RaceCircuitSectionProps) {
 
 				<Card className="bg-white/5 border-white/10 backdrop-blur-sm">
 					<CardContent className="p-6 text-center">
-						<img src="/flag.svg" alt="Race Distance" className="w-8 h-8 mx-auto mb-3" />
+						<img src={getImagePath("/flag.svg")} alt="Race Distance" className="w-8 h-8 mx-auto mb-3" />
 						<p className="text-xl mb-1 text-white font-bold">{race.raceDistance}</p>
 						<p className="text-sm text-gray-400">Race Distance</p>
 					</CardContent>
@@ -66,7 +67,7 @@ export function RaceCircuitSection({ race }: RaceCircuitSectionProps) {
 							<div>
 								<p className="text-sm text-gray-500 font-medium mb-1">Fastest Lap Time</p>
 								<div className="flex items-center gap-2">
-									<img src="/clock.svg" alt="Fastest Lap Time" className="w-5 h-5" />
+									<img src={getImagePath("/clock.svg")} alt="Fastest Lap Time" className="w-5 h-5" />
 									<p className="text-xl text-white">{race.lapRecord}</p>
 								</div>
 							</div>

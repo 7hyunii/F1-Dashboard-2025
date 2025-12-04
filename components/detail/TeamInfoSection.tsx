@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Constructor } from "@/types/constructor";
+import { getImagePath } from "@/lib/utils/image";
 
 interface TeamInfoSectionProps {
   team: Constructor;
@@ -11,7 +12,7 @@ export function TeamInfoSection({ team }: TeamInfoSectionProps) {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-12">
                 <Card className="bg-white/5 border-white/10 backdrop-blur-sm">
                     <CardContent className="p-6 text-center">
-                        <img src="/trophy_red.svg" alt="Constructor Points" className="w-8 h-8 mx-auto mb-3" />
+                        <img src={getImagePath("/trophy_red.svg")} alt="Constructor Points" className="w-8 h-8 mx-auto mb-3" />
                         <p className="text-3xl mb-1 text-white font-bold">{team.points}</p>
                         <p className="text-sm text-gray-400">Constructor Points</p>
                     </CardContent>
@@ -19,7 +20,7 @@ export function TeamInfoSection({ team }: TeamInfoSectionProps) {
 
                 <Card className="bg-white/5 border-white/10 backdrop-blur-sm">
                     <CardContent className="p-6 text-center">
-                        <img src="/trending-up.svg" alt="Championship Position" className="w-8 h-8 mx-auto mb-3" />
+                        <img src={getImagePath("/trending-up.svg")} alt="Championship Position" className="w-8 h-8 mx-auto mb-3" />
                         <p className="text-3xl mb-1 text-white font-bold">P{team.position}</p>
                         <p className="text-sm text-gray-400">Championship Position</p>
                     </CardContent>
@@ -27,7 +28,7 @@ export function TeamInfoSection({ team }: TeamInfoSectionProps) {
 
                 <Card className="bg-white/5 border-white/10 backdrop-blur-sm">
                     <CardContent className="p-6 text-center">
-                        <img src="/award.svg" alt="Season Wins" className="w-8 h-8 mx-auto mb-3 text-green-500" />
+                        <img src={getImagePath("/award.svg")} alt="Season Wins" className="w-8 h-8 mx-auto mb-3 text-green-500" />
                         <p className="text-3xl mb-1 text-white font-bold">{team.wins}</p>
                         <p className="text-sm text-gray-400">Season Wins</p>
                     </CardContent>
@@ -35,7 +36,7 @@ export function TeamInfoSection({ team }: TeamInfoSectionProps) {
 
                 <Card className="bg-white/5 border-white/10 backdrop-blur-sm">
                     <CardContent className="p-6 text-center">
-                        <img src="/crown.svg" alt="World Championships" className="w-8 h-8 mx-auto mb-3 text-purple-500" />
+                        <img src={getImagePath("/crown.svg")} alt="World Championships" className="w-8 h-8 mx-auto mb-3 text-purple-500" />
                         <p className="text-3xl mb-1 text-white font-bold">{team.championships}</p>
                         <p className="text-sm text-gray-400">World Championships</p>
                     </CardContent>

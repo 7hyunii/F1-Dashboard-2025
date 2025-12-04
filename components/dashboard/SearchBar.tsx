@@ -6,6 +6,7 @@ import { Card, CardContent } from '../ui/card';
 import { getConstructorStandings } from '@/lib/getConstructors';
 import { getDriverStandings } from '@/lib/getDrivers';
 import { getRaces } from '@/lib/getRaces';
+import { getImagePath } from '@/lib/utils/image';
 
 export function SearchBar() {
   const [query, setQuery] = useState('');
@@ -54,7 +55,7 @@ export function SearchBar() {
   return (
     <div className="relative w-full max-w-md">
       <div className="relative">
-        <img src='/search.svg' alt="Search Icon" className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4" />
+        <img src={getImagePath('/search.svg')} alt="Search Icon" className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4" />
         
         <Input
           type="text"

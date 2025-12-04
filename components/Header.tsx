@@ -1,4 +1,5 @@
 import { SearchBar } from '@/components/dashboard/SearchBar';
+import { getImagePath } from '@/lib/utils/image';
 
 // detail, about, dashboard 헤더 사용
 type HeaderProps = {
@@ -22,7 +23,7 @@ export function Header({ title, subtitle, completedRacesCount, totalRaces, showS
           {totalRaces != null ? (
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 sm:p-6 w-full sm:min-w-[200px] sm:w-auto">
               <div className="flex items-center gap-2 mb-2">
-                <img src='/trophy_red.svg' alt="Trophy Icon" className="w-4 h-4" />
+                <img src={getImagePath('/trophy_red.svg')} alt="Trophy Icon" className="w-4 h-4" />
                 <span className="text-xs text-gray-400">Season Progress</span>
               </div>
               <p className="text-3xl sm:text-4xl mb-1">{completedRacesCount}/{totalRaces}</p>

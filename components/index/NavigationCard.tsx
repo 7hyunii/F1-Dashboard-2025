@@ -1,4 +1,5 @@
 import { FeatureCard } from '@/components/index/FeatureCard';
+import { getImagePath } from '@/lib/utils/image';
 
 export function NavigationCards() {
 	return (
@@ -10,7 +11,7 @@ export function NavigationCards() {
 						title="Dashboard"
 						desc="View standings, statistics, and analytics for the 2025 season"
 						theme="primary"
-						icon={<img src='/chart-column-decreasing.svg' alt="Dashboard Icon" className="w-7 h-7 text-white" />}
+						icon={<img src={getImagePath('/chart-column-decreasing.svg')} alt="Dashboard Icon" className="w-7 h-7 text-white" />}
 					/>
 
 					<FeatureCard
@@ -18,7 +19,7 @@ export function NavigationCards() {
 						title="About"
 						desc="Learn about Formula 1 history, teams, and the championship"
 						theme="neutral"
-						icon={<img src='/info.svg' alt="About Icon" className="w-7 h-7 text-white" />}
+						icon={<img src={getImagePath('/info.svg')} alt="About Icon" className="w-7 h-7 text-white" />}
 					/>
 				</div>
 			</div>

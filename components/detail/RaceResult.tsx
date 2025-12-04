@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Race } from '@/types/race';
+import { getImagePath } from '@/lib/utils/image';
 
 interface RaceResultProps {
 	race: Race;
@@ -54,7 +55,7 @@ export function RaceResult({ race }: RaceResultProps) {
                       <TableCell>
                         <Link href={`/detail/driver/${result.driverId}`} className="hover:underline">
                           <div className="flex items-center gap-2">
-                            {isWinner && <img src="/trophy.svg" alt="Winner" className="w-4 h-4" />}
+                            {isWinner && <img src={getImagePath("/trophy.svg")} alt="Winner" className="w-4 h-4" />}
                             <span className="text-white font-medium">{result.driverName}</span>
                           </div>
                         </Link>

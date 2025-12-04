@@ -6,6 +6,7 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { getStandingsByRound, ChartData } from '@/lib/getStandingsByRound';
 import { getRaces } from '@/lib/getRaces';
+import { getImagePath } from '@/lib/utils/image';
 
 interface CustomTooltipProps {
   active?: boolean;
@@ -42,7 +43,7 @@ export function StandingsChart() {
                 <CardDescription className="text-gray-400 font-medium mt-1">Round-by-round Performance Visualization</CardDescription>
               </div>
               <div className="bg-white/10 rounded-full p-2">
-                <img src='/chevron-down.svg' alt="Chevron Down Icon" className={`w-5 h-5 transition-transform duration-200 ${chartsOpen ? 'rotate-180' : ''}`} />
+                <img src={getImagePath('/chevron-down.svg')} alt="Chevron Down Icon" className={`w-5 h-5 transition-transform duration-200 ${chartsOpen ? 'rotate-180' : ''}`} />
               </div>
             </div>
           </CardHeader>
