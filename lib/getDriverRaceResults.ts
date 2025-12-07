@@ -67,6 +67,3 @@ export function getDriverRaceResults() {
 
     return {map, podiumCounts};
 }
-
-
-// per charts ->  result of per round points

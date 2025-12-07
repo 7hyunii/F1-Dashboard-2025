@@ -34,36 +34,4 @@ export function getDriverStandings(): Driver[] {
             profile,
         };
     });
-
-    // const result: Driver[] = [];
-    
-    // for (let i = 0; i < 21; i++) {
-    //     const s = rawDriverStanding.StandingsLists[0].DriverStandings[i];
-    //     const teamId = s.Constructors[s.Constructors.length - 1].constructorId;
-    //     const number = Number(s.Driver.currentNumber?? s.Driver.permanentNumber);
-    //     const profile = rawDriver.find(p => p.driver_number === number)?.headshot_url ?? "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/";
-
-    //     const item: Driver = {
-    //         fullName: `${s.Driver.givenName} ${s.Driver.familyName}`.trim(),
-    //         givenName: s.Driver.givenName,
-    //         familyName: s.Driver.familyName,
-    //         teamName: s.Constructors[s.Constructors.length - 1].name,
-    //         teamId,
-    //         teamPoints: (getConstructorStandings().find(c => c.id === teamId)?.points ?? 0),
-    //         teamColor: s.Constructors[s.Constructors.length - 1].color,
-    //         number,
-    //         id: s.Driver.driverId,
-    //         position: Number(s.position),
-    //         points: Number(s.points),
-    //         wins: Number(s.wins),
-    //         podiums: getDriverRaceResults().podiumCounts[s.Driver.driverId],
-    //         nationality: s.Driver.nationality,
-    //         dateOfBirth: s.Driver.dateOfBirth,
-    //         profile,
-    //     }
-
-    //     result.push(item);
-    // }
-
-    // return result;
 }

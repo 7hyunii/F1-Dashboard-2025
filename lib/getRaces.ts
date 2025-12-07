@@ -59,7 +59,7 @@ export function getRaces(): Race[] {
         };
 
         const raceRecords: RaceResult[] = [];
-        if (i < 23) {
+        if (i < 24) {
             const r = rawRaceResult.RaceTable?.Races?.[i];
             
             for (let j = 0; j < r.Results.length; j++) {
