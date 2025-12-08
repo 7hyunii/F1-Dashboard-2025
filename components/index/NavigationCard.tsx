@@ -17,7 +17,7 @@ export function NavigationCards() {
 					<FeatureCard
 						href="/about"
 						title="About"
-						desc="Learn about Formula 1 history, teams, and the championship"
+						desc="Project Information & Overview"
 						theme="neutral"
 						icon={<img src={getImagePath('/info.svg')} alt="About Icon" className="w-7 h-7 text-white" />}
 					/>
