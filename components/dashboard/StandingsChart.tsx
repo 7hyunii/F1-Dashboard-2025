@@ -20,7 +20,7 @@ interface CustomTooltipProps {
 
 export function StandingsChart() {
   const [chartsOpen, setChartsOpen] = useState(true);
-  const [selectedRound, setSelectedRound] = useState<string>("23"); // 기본값: 최신 라운드
+  const [selectedRound, setSelectedRound] = useState<string>("24");
   const races = useMemo(() => getRaces(), []);
   const completedRaces = useMemo(() => races.filter(r => r.raceResult && r.raceResult.length > 0), [races]);
 
@@ -30,7 +30,10 @@ export function StandingsChart() {
   }, [selectedRound]);
 
   const top5Drivers = useMemo(() => driverStandings.slice(0, 5), [driverStandings]);
-  const top5Constructors = useMemo(() => constructorStandings.slice(0, 5), [constructorStandings]);
+  const top5Constructors = useMemo(
+    () => constructorStandings.slice(0, 5).map(c => ({ ...c, name: c.name.replace(/\s+/g, '\u00A0') })),
+    [constructorStandings]
+  );
 
   return (
     <Collapsible open={chartsOpen} onOpenChange={setChartsOpen}>
@@ -76,7 +79,7 @@ export function StandingsChart() {
                 </h3>
                 <div className="h-[300px] w-full">
                   <ResponsiveContainer width="100%" height="100%">
-                    <BarChart data={top5Drivers} layout="vertical" margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+                    <BarChart data={top5Drivers} layout="vertical" margin={{ top: 5, right: 20, left: 10, bottom: 5 }}>
                       <CartesianGrid strokeDasharray="3 3" stroke="#333" horizontal={false} />
                       <XAxis type="number" stroke="#888" />
                       <YAxis dataKey="name" type="category" stroke="#fff" width={60} tick={{fontSize: 12}} tickLine={false} />
@@ -114,10 +117,10 @@ export function StandingsChart() {
                 </h3>
                 <div className="h-[300px] w-full">
                   <ResponsiveContainer width="100%" height="100%">
-                    <BarChart data={top5Constructors} layout="vertical" margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+                    <BarChart data={top5Constructors} layout="vertical" margin={{ top: 5, right: 20, left: 10, bottom: 5 }}>
                       <CartesianGrid strokeDasharray="3 3" stroke="#333" horizontal={false} />
                       <XAxis type="number" stroke="#888" />
-                      <YAxis dataKey="name" type="category" stroke="#fff" width={100} tick={{fontSize: 12}} tickLine={false} />
+                      <YAxis dataKey="name" type="category" stroke="#fff" width={60} tick={{fontSize: 12}} tickLine={false} />
                       <Tooltip 
                         content={({ active, payload, label }: CustomTooltipProps) => {
                           if (active && payload && payload.length) {
