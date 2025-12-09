@@ -6,7 +6,7 @@ export function Footer() {
               F1 Dashboard - Term Project • © 2025 Seonghyeon Mun
             </p>
             <p className="text-center text-gray-500 text-sm mt-1">
-              updated: ??? 
+              Version 1.0.0
             </p>
         </div>
      </footer>
