@@ -1,8 +1,9 @@
-import Link from 'next/link';
+"use client";
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import React from 'react';
 import { getImagePath } from '@/lib/utils/image';
+import { useRouter } from 'next/navigation';
 
 interface DetailHeaderProps {
   title: string;
@@ -19,17 +20,26 @@ export function DetailHeader({
   backHref = '/',
   badgeClassName,
 }: DetailHeaderProps) {
+  const router = useRouter();
+  const handleBack = () => {
+    if (typeof window !== 'undefined' && window.history.length > 1) {
+      router.back();
+    } else {
+      router.push(backHref);
+    }
+  };
+
   return (
     <section className="bg-gradient-to-b from-black via-gray-900 to-black text-white py-12 sm:py-16 border-b border-white/10">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
-        <Link href={backHref}>
-          <Button
-            variant="ghost"
-            className="mb-4 sm:mb-6 text-white hover:text-gray-300 hover:bg-white/10 flex items-center gap-2 pl-1">
-            <img src={getImagePath("/arrow-left.svg")} alt="Back" className="w-4 h-4" />
-            Back to Home
-          </Button>
-        </Link>
+        <Button
+          type="button"
+          onClick={handleBack}
+          variant="ghost"
+          className="mb-4 sm:mb-6 text-white hover:text-gray-300 hover:bg-white/10 flex items-center gap-2 pl-1">
+          <img src={getImagePath("/arrow-left.svg")} alt="Back" className="w-4 h-4" />
+          Back
+        </Button>
 
         <div className="flex flex-col gap-2 sm:gap-3 mb-4">
           {badgeText && (
