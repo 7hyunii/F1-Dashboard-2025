@@ -1,6 +1,12 @@
 import { Hero } from '@/components/index/Hero';
 import { NavigationCards } from '@/components/index/NavigationCard';
 import { RaceList } from '@/components/index/RaceList';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Home | F1 2025 Dashboard',
+  description: '2025 Formula 1 Season Calendar and Overview',
+};
 
 export default function Index() {
   return (
