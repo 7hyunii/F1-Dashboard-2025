@@ -21,33 +21,41 @@ export function ConstructorsTable({ constructors }: ConstructorsTableProps) {
         </thead>
         <tbody>
           {constructors.map((team) => (
-            <tr key={team.id} className="border-b border-white/5 hover:bg-white/10 transition-all group cursor-pointer">
-              <td className="p-3 sm:p-4">
-                <Link href={`/detail/team/${team.id}`} className="flex items-center gap-2 sm:gap-3">
-                  <span className="text-lg sm:text-2xl text-white font-semibold">{team.position}</span>
+            <tr key={team.id} className="border-b border-white/5 hover:bg-white/10 transition-all group">
+              <td className="p-0">
+                <Link href={`/detail/team/${team.id}`} className="block p-3 sm:p-4 h-full">
+                  <div className="flex items-center gap-2 sm:gap-3">
+                    <span className="text-lg sm:text-2xl text-white font-semibold">{team.position}</span>
+                  </div>
                 </Link>
               </td>
-              <td className="p-3 sm:p-4 gap-3 relative">
-                <div className="flex items-center gap-3">
-                  <img
-                    src={team.logo}
-                    alt={`${team.name} logo`}
-                    className="w-8 h-8 rounded-full object-cover flex-shrink-0"
-                  />
-                  <div className="w-1 h-8 rounded-sm hidden sm:table-cell" style={{ backgroundColor: `#${team.color}` }} />
-                  <Link href={`/detail/team/${team.id}`} className="flex items-center gap-2 sm:gap-3">
-                    <p className="text-white text-sm sm:text-base font-medium group-hover:text-red-400 transition-colors">{team.name}</p>
-                  </Link>
-                </div>
+              <td className="p-0">
+                <Link href={`/detail/team/${team.id}`} className="block p-3 sm:p-4 h-full">
+                  <div className="flex items-center gap-3">
+                    <img
+                      src={team.logo}
+                      alt={`${team.name} logo`}
+                      className="w-8 h-8 rounded-full object-cover flex-shrink-0"
+                    />
+                    <div className="w-1 h-8 rounded-sm hidden sm:table-cell" style={{ backgroundColor: `#${team.color}` }} />
+                    <div className="flex items-center gap-2 sm:gap-3">
+                      <p className="text-white text-sm sm:text-base font-medium group-hover:text-red-400 transition-colors">{team.name}</p>
+                    </div>
+                  </div>
+                </Link>
               </td>
-              <td className="p-3 sm:p-4 text-right">
-                <p className="text-lg sm:text-xl text-white font-semibold">{team.points}</p>
+              <td className="p-0 text-right">
+                <Link href={`/detail/team/${team.id}`} className="block p-3 sm:p-4 h-full">
+                  <p className="text-lg sm:text-xl text-white font-semibold">{team.points}</p>
+                </Link>
               </td>
-              <td className="p-3 sm:p-4 text-right hidden sm:table-cell">
-                <Badge variant="outline" className="border-yellow-600/30 text-yellow-400 bg-yellow-600/10 font-semibold">{team.wins}</Badge>
+              <td className="p-0 text-right hidden sm:table-cell">
+                <Link href={`/detail/team/${team.id}`} className="block p-3 sm:p-4 h-full">
+                  <Badge variant="outline" className="border-yellow-600/30 text-yellow-400 bg-yellow-600/10 font-semibold">{team.wins}</Badge>
+                </Link>
               </td>
-              <td className="p-3 sm:p-4">
-                <Link href={`/detail/team/${team.id}`}>
+              <td className="p-0">
+                <Link href={`/detail/team/${team.id}`} className="block p-3 sm:p-4 h-full">
                   <p className="w-5 h-5 text-gray-600 group-hover:text-red-400 transition-colors"> &gt; </p>
                 </Link>
               </td>
