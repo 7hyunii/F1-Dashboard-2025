@@ -93,8 +93,8 @@ Next.js를 활용하여 정적 웹사이트를 구축하는 과정을 실습하�
 ### 1. 저장소 복제 (Clone)
 
 ```bash
-git clone <repository-url>
-cd web_termproject
+git clone https://github.com/7hyunii/F1-Dashboard-2025.git
+cd F1-Dashboard-2025
 ```
 
 ### 2. 의존성 설치
